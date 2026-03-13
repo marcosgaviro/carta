@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Carta Especial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#ffd6e7,#ffeaf3);
+    font-family:'Playfair Display',serif;
+    overflow:hidden;
+}
+
+/* decoração romântica */
+
+body::before{
+    content:"❤ ❤ ❤ ❤ ❤ ❤ ❤";
+    position:absolute;
+    font-size:40px;
+    opacity:0.05;
+    top:10%;
+    left:10%;
+    transform:rotate(-20deg);
+}
+
+body::after{
+    content:"❤ ❤ ❤ ❤ ❤";
+    position:absolute;
+    font-size:50px;
+    opacity:0.05;
+    bottom:10%;
+    right:10%;
+    transform:rotate(20deg);
+}
+
+/* container */
+
+.container{
+    position:relative;
+    text-align:center;
+}
+
+/* envelope */
+
+.envelope{
+    width:300px;
+    height:200px;
+    background:#ffffff;
+    border-radius:8px;
+    position:relative;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:transform 0.5s;
+}
+
+.envelope:hover{
+    transform:scale(1.05);
+}
+
+/* aba do envelope */
+
+.flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:150px solid transparent;
+    border-right:150px solid transparent;
+    border-bottom:100px solid #f8b6cc;
+    top:-100px;
+    left:0;
+    transform-origin:bottom;
+    transition:transform 0.8s;
+}
+
+/* cadeado */
+
+.lock{
+    position:absolute;
+    font-size:30px;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* carta */
+
+.letter{
+    position:absolute;
+    width:320px;
+    height:250px;
+    background:#fffdf8;
+    border-radius:8px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    top:0;
+    left:50%;
+    transform:translate(-50%,50px);
+    opacity:0;
+    transition:all 1s;
+
+    overflow-y:auto;
+}
+
+/* scroll personalizado */
+
+.letter::-webkit-scrollbar{
+    width:6px;
+}
+
+.letter::-webkit-scrollbar-track{
+    background:#ffeaf3;
+}
+
+.letter::-webkit-scrollbar-thumb{
+    background:#f8b6cc;
+    border-radius:10px;
+}
+
+/* texto */
+
+.letter h1{
+    font-family:'Great Vibes',cursive;
+    color:#d63384;
+    font-size:40px;
+    margin-top:0;
+}
+
+.letter p{
+    font-size:18px;
+    color:#444;
+    line-height:1.6;
+}
+
+/* animação de abertura */
+
+.open .flap{
+    transform:rotateX(180deg);
+}
+
+.open .letter{
+    opacity:1;
+    transform:translate(-50%,-200px);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+<div class="envelope" onclick="abrirCarta()">
+
+<div class="flap"></div>
+
+<div class="lock">🔒</div>
+
+</div>
+
+<div class="letter">
+
+<h1>Gabrielly,</h1>
+
+<p>
+
+
+<br><br>
+
+Boa noite meu amorzinho ❤️, tudo bem? Provavelmente não vou te enviar isso agora, só amanhã, mas queria escrever esse curto textinho pra tirar pelo menos um sorrisinho dessa sua boquinha linda. Nem que seja um sorriso bobinho sabe? Mas sem dúvida alguma eu amo ele. Eu não sei o motivo, confesso que nem sei como isso aconteceu tão rápido, mas eu simplesmente amo você. Não sei descrever, eu apenas quero você todo tempo, todos os dias. Eu amo abraçar você, amo beijar você e sentir seu cheiro depois. Eu amo seu perfume. Amo a vaidade que você tem de estar SEMPRE linda, e se supera cada dia mais. Cada dia com uma roupa mais bonita, um perfume mais cheiroso, e cada dia eu me apaixono mais. O engraçado é que não apenas por você ser totalmente linda, mas pelo seu jeito meigo, não só na forma de trabalhar, mas de tratar a todos, você sem dúvidas merece o mundo, merece até algo muito melhor do que eu. Você é perfeita garota. Você sem dúvida é a melhor parte do meu dia, a melhor parte da minha vida. Obrigado por estar comigo ❤️
+
+
+
+<br><br>
+
+Caso esteja lendo isso apenas de manhã, bom dia minha princesinha ❤️
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirCarta(){
+    document.getElementById("container").classList.toggle("open");
+}
+
+</script>
+
+</body>
+</html>
